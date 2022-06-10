@@ -29,7 +29,8 @@ export const api = (request : Request, todo? : Todo) =>{
             break;
     }
 
-    if(request.method.toUpperCase() !== "GET"){
+    if(request.method.toUpperCase() !== "GET" &&
+     request.headers.accept !== "application/json"){
         return {
             status: 303,            
             headers:{
